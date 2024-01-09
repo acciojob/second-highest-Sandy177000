@@ -10,7 +10,26 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			if (arr.length==0) {
+				return -Infinity;
+			} else if(arr.length==1 && arr[0]==1){
+				return -Infinity;
+			}
+			
 			arr.sort();
+			boolean flag = false;
+			const x = arr[0];
+			let y = 0;
+			for (let index = 0; index < arr.length;
+				 index++) {
+				if(x==arr[index]){
+					y++;
+				}
+			}
+
+			if(y==arr.length){
+				return -Infinity;
+			}
 
 			return arr[arr.length-2];
 			
@@ -24,7 +43,7 @@
 			}
 			alert(secondHighest(arr));
 		}
-		Main();
+		//Main();
 	</script>
 
     <script type="text/javascript" src="./script.js">
